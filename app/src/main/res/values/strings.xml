@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Telega</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="settings_default_username">Sergey Bochkin</string>
+    <string name="settings_default_status">Online</string>
+    <string name="settings_default_email">sergey.bochkin@mail.net</string>
+    <string name="settings_default_account_text">Account</string>
+    <string name="settings_default_phone">Enter Phone Number</string>
+    <string name="settings_label_phone_number">Press to change phone number</string>
+    <string name="settings_default_login">defaul_name</string>
+    <string name="settings_label_username">username</string>
+    <string name="settings_about_text">About</string>
+    <string name="settings_label_about_bio">Write something about yourself</string>
+    <string name="settings_change_name">Change Name</string>
+    <string name="exit_profile">Exit</string>
+    <string name="cd_register_image">register_image</string>
+    <string name="register_enter_code">Enter Code</string>
+    <string name="register_text_we_sent">We have sent an SMS with a verification code to your phone</string>
+    <string name="register_hint_default_code">_ _ _ _ _ _</string>
+    <string name="register_title_yourPhone">Your Phone</string>
+    <string name="register_toast_enter_phone">Enter phone number</string>
+    <string name="register_phone_hint">----------</string>
+    <string name="settings_hint_enter_name">Enter Name</string>
+    <string name="settings_hint_enter_surname">Enter Surname</string>
+    <string name="name_cannot_be_empty">Name cannot be empty</string>
+    <string name="toast_data_updated">Data Updated</string>
+    <string name="settings_hint_input_username">username</string>
+    <string name="toast_empty_username">Username cannot be empty</string>
+    <string name="settings_default_phone_number">+16505553434</string>
+</resources>

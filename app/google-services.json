@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "359292597332",
+    "firebase_url": "https://telega-161d2.firebaseio.com",
+    "project_id": "telega-161d2",
+    "storage_bucket": "telega-161d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359292597332:android:67167beeb02d84ba6ae9c1",
+        "android_client_info": {
+          "package_name": "com.sergey.bochkin.telega"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359292597332-n3c310huae9i8l2hfgftur4sov5k8nkg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sergey.bochkin.telega",
+            "certificate_hash": "2d65aaae8242217e8edc88a83f54917d1efbc5d2"
+          }
+        },
+        {
+          "client_id": "359292597332-idtkp12q50tjqrpaarmfaevr35lumblo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLGy1wU4vvpyRL5ZhDrBPVrOByG09lp2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "359292597332-idtkp12q50tjqrpaarmfaevr35lumblo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
