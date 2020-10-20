@@ -20,13 +20,15 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader
 import com.mikepenz.materialdrawer.util.DrawerImageLoader
 import com.sergey.bochkin.telega.R
+import com.sergey.bochkin.telega.Ui.Fragments.ContactsFragment
 import com.sergey.bochkin.telega.Ui.Fragments.SettingsFragment
 import com.sergey.bochkin.telega.Utilites.APP_ACTIVITY
 import com.sergey.bochkin.telega.Utilites.USER
 import com.sergey.bochkin.telega.Utilites.downloadAndSetImage
 import com.sergey.bochkin.telega.Utilites.replaceFragment
+import kotlinx.android.synthetic.main.activity_main.*
 
-class AppDrawer (val mainActivity: AppCompatActivity, val toolbar: Toolbar){
+class AppDrawer {
     private lateinit var mDrawer: Drawer
     private lateinit var mHeader: AccountHeader
     private lateinit var mDarawerLayout: DrawerLayout
@@ -41,23 +43,23 @@ class AppDrawer (val mainActivity: AppCompatActivity, val toolbar: Toolbar){
     }
     fun disableDrawer(){
         mDrawer.actionBarDrawerToggle?.isDrawerIndicatorEnabled = false
-        mainActivity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        APP_ACTIVITY.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         mDarawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
-        toolbar.setNavigationOnClickListener{
-            mainActivity.supportFragmentManager.popBackStack()
+        APP_ACTIVITY.mToolbar.setNavigationOnClickListener{
+            APP_ACTIVITY.supportFragmentManager.popBackStack()
         }
     }
     fun enableDrawer(){
-        mainActivity.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        APP_ACTIVITY.supportActionBar?.setDisplayHomeAsUpEnabled(false)
         mDrawer.actionBarDrawerToggle?.isDrawerIndicatorEnabled = true
         mDarawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
-        toolbar.setNavigationOnClickListener{
+        APP_ACTIVITY.mToolbar.setNavigationOnClickListener{
             mDrawer.openDrawer()
         }
     }
     private fun createDrawer() {
-        mDrawer = DrawerBuilder().withActivity(mainActivity)
-            .withToolbar(toolbar)
+        mDrawer = DrawerBuilder().withActivity(APP_ACTIVITY)
+            .withToolbar(APP_ACTIVITY.mToolbar)
             .withActionBarDrawerToggle(true)
             .withSelectedItem(-1)
             .withAccountHeader(mHeader)
@@ -114,13 +116,18 @@ class AppDrawer (val mainActivity: AppCompatActivity, val toolbar: Toolbar){
                     position: Int,
                     drawerItem: IDrawerItem<*>
                 ): Boolean {
-                    Toast.makeText(mainActivity.applicationContext, "position: $position", Toast.LENGTH_SHORT).show()
-                    when(position){
-                        7 -> mainActivity.replaceFragment(SettingsFragment())
-                    }
+                    Toast.makeText(APP_ACTIVITY.applicationContext, "position: $position", Toast.LENGTH_SHORT).show()
+                    clickToItem(position)
                     return false
                 }
             }).build()
+    }
+
+    private fun clickToItem(position:Int){
+        when(position){
+            7 -> APP_ACTIVITY.replaceFragment(SettingsFragment())
+            4 -> APP_ACTIVITY.replaceFragment(ContactsFragment())
+        }
     }
 
     private fun createHeader() {
@@ -129,7 +136,7 @@ class AppDrawer (val mainActivity: AppCompatActivity, val toolbar: Toolbar){
             .withEmail(USER.phone)
             .withIcon(USER.photoUrl)
             .withIdentifier(200)
-        mHeader = AccountHeaderBuilder().withActivity(mainActivity).withHeaderBackground(R.drawable.header)
+        mHeader = AccountHeaderBuilder().withActivity(APP_ACTIVITY).withHeaderBackground(R.drawable.header)
             .addProfiles(
                 mCurentProfile
             ).build()

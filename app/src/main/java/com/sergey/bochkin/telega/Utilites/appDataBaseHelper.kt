@@ -119,3 +119,5 @@ fun updatePhonesToDatabase(arrayContacts: ArrayList<CommonModel>) {
         }
     })
 }
+fun DataSnapshot.getCommonModel(): CommonModel =
+    this.getValue(CommonModel::class.java)?: CommonModel()
