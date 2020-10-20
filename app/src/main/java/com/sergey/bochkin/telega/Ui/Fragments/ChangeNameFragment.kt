@@ -12,7 +12,7 @@ class ChangeNameFragment : BaseChangeFragment(R.layout.fragment_change_name) {
 
     private fun initFullNameList() {
         val fullNameList = USER.full_name.split(" ")
-        if (fullNameList != null && fullNameList.isNotEmpty()) {
+        if (fullNameList.isNotEmpty()) {
             settings_input_name.setText(fullNameList[0])
             if (fullNameList.size > 1) {
                 settings_input_surname.setText(fullNameList[1])
